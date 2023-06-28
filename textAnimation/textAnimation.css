@@ -1,0 +1,15 @@
+.text-wipe-in-parts-word {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  height: 1.4em;
+  overflow: hidden;
+  padding-top: 1.4em;
+}
+.text-wipe-in-parts-word-show {
+  transition: padding-top 1s ease-in-out;
+  padding-top: 0;
+}

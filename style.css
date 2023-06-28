@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,200;1,600;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+  max-width: 100vw;
+  font-family: Poppins, sans-serif;
+  overflow-x: hidden;
+  color: black;
+  background-color: hsl(var(--primary-hue), 90%, 90%);
+}
+html {
+  overflow-x: hidden;
+}
+::selection {
+  background-color: hsl(var(--primary-hue), 100%, 75%);
+  color: hsl(var(--primary-hue), 70%, 10%);
+}
+.modal {
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 1000;
+}
+.spinner {
+  border-right: 2px solid white;
+  border-top: 2px solid var(--accent-clr);
+  border-left: 2px solid white;
+  border-bottom: 2px solid var(--accent-clr);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  animation: spinner 1s linear infinite;
+}
+.spinnerLabel {
+  color: var(--accent-clr);
+}
+
+.flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 120vh;
+  background-color: hsl(var(--primary-hue), 100%, 69%);
+  background: radial-gradient(
+    circle at 50% 55%,
+    hsl(calc(var(--primary-hue) + 40), 90%, 70%),
+    hsl(var(--primary-hue), 100%, 69%)
+  );
+  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 50% 100%, 0% 90%);
+}
+header {
+  height: 60px;
+  width: 100vw;
+  padding: 10px 40px;
+}
+header h1 {
+  font-weight: 500;
+  font-size: 1.5em;
+  color: var(--font-clr);
+}
+.hero .container {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+}
+.main {
+  color: var(--font-clr);
+  padding: 3em;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  text-align: center;
+}
+.wavingHand {
+  display: inline-block;
+  transform: rotate(-45deg);
+  font-size: 1.8em;
+  animation: waveHand 2s infinite ease-in-out;
+}
+.main h3 {
+  font-weight: 300;
+  line-height: 1em;
+}
+.main h2 {
+  font-weight: 300;
+}
+.main h1 {
+  font-weight: 900;
+  font-size: 4em;
+}
+section {
+  font-size: 1.2rem;
+  padding: 3em 1em;
+}
+
+#social {
+  background-color: hsl(var(--primary-hue), 50%, 40%);
+  clip-path: polygon(0% 0%, 100% 20%, 100% 100%, 0% 80%);
+}
+#social .contactMe {
+  margin-bottom: 15px;
+  text-align: center;
+  width: 100vw;
+  font-size: 1.2em;
+  font-weight: 900;
+  color: white;
+  transform: rotate(9deg);
+}
+
+#social .icon {
+  cursor: pointer;
+  background-color: black;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  color: white;
+}
+#social .icon#icon-twitter {
+  background-color: #1da1f2;
+}
+#social .icon#icon-instagram {
+  background: linear-gradient(
+    -135deg,
+    #515bd4,
+    #8134af,
+    #dd2a7b,
+    #feda77,
+    #f58529
+  );
+}
+#social .icon#icon-facebook {
+  background-color: #1877f2;
+}
+#social .icon#icon-linkedin {
+  background-color: #0077b5;
+}
+#gallery {
+  position: relative;
+  padding-top: 10%;
+  padding-bottom: calc(10% +2em);
+  clip-path: polygon(
+    0 0,
+    10% 10%,
+    90% 10%,
+    100% 0%,
+    100% 100%,
+    90% 90%,
+    10% 90%,
+    0% 100%
+  );
+  background-color: hsl(var(--primary-hue), 50%, 40%);
+}
+#gallery .container {
+  margin: 20px;
+  margin-bottom: 30px;
+}
+
+#gallery a {
+  display: block;
+  position: absolute;
+  bottom: calc(10px + 10%);
+  left: 50%;
+  transform: translateX(-50%);
+  color: hsl(var(--primary-hue), 90%, 90%);
+}
+.big-screen {
+  display: none;
+}
+.title {
+  margin-bottom: 1em;
+  color: var(--accent-clr);
+  font-weight: 500;
+  /* border-left: 5px solid var(--accent-clr); */
+  padding-left: 1ch;
+}
+.title {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  /* border: none !important; */
+}
+.title::after {
+  content: " ";
+  position: absolute;
+  left: 50%;
+  bottom: -0px;
+  width: 40px;
+  transform: translateX(-15px);
+
+  display: block;
+  height: 7px;
+  /* making the border radius very large to tell the css renderer to draw circle as border instead of oval */
+  border-radius: 100px;
+  background-color: currentColor;
+}
+#achivements {
+  position: relative;
+}
+
+#achivements .achivement {
+  margin: 10px;
+  width: 100%;
+  width: min(500px, 100%);
+}
+#achivements .achivement .fa-award {
+  background-color: var(--accent-clr);
+  color: rgb(255, 153, 0);
+  display: inline-block;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  text-align: center;
+  margin-right: 20px;
+}
+#achivements .achivement .description {
+  display: inline;
+}
+@media (min-width: 500px) {
+  .big-screen {
+    display: initial;
+  }
+
+  section {
+    padding: 3em 3em;
+  }
+  #social .icon {
+    transform: none !important;
+  }
+  #social .contactMe {
+    transform: none;
+  }
+}
+@keyframes waveHand {
+  0% {
+    transform: rotate(-60deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(-60deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

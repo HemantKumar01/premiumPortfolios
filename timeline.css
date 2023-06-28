@@ -1,0 +1,115 @@
+#timeline {
+  position: relative;
+}
+#timeline .timestamp-container {
+  flex-direction: column;
+  align-items: flex-start;
+}
+#timeline .timestamp {
+  position: relative;
+  margin-bottom: 1em;
+  width: 100%;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.171);
+  border-radius: 10px;
+  padding: 10px;
+}
+#timeline .timestamp::after {
+  content: " ";
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: calc(50% - 15px);
+
+  width: 20px;
+  height: 20px;
+  line-height: 15px;
+  border-radius: 50%;
+  border: 5px solid var(--accent-clr);
+  background-color: hsl(var(--primary-hue), 90%, 90%);
+}
+#timeline .timestamp:nth-child(even)::after {
+  left: unset;
+  right: 0;
+}
+#timeline .timestamp:nth-child(even) {
+  padding-right: 50px;
+  text-align: right;
+}
+#timeline .timestamp:nth-child(odd)::after {
+  right: unset;
+  left: 0;
+}
+#timeline .timestamp:nth-child(odd) {
+  padding-left: 50px;
+  text-align: left;
+}
+#timeline .timestamp .time {
+  font-size: 0.8em;
+  color: var(--accent-clr);
+  font-weight: 900;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+/* adding line connecting the points */
+#timeline .pseudo-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#timeline .pseudo-line::before {
+  box-sizing: border-box;
+  content: " ";
+  position: absolute;
+  left: 12.5px;
+  top: -0.5em;
+  height: calc(100% + 1em);
+  width: 2px;
+  border: 2px dashed hsl(var(--primary-hue), 100%, 80%);
+}
+#timeline .timestamp:nth-child(even) .pseudo-line::before {
+  right: 12.5px;
+  left: unset;
+}
+#timeline .timestamp:nth-child(odd) .pseudo-line::before {
+  right: unset;
+  left: 12.5px;
+}
+#timeline .pseudo-line::after {
+  box-sizing: border-box;
+  content: " ";
+  position: absolute;
+  bottom: -1em;
+  width: calc(100% - 25px);
+  left: 12.5px;
+  border: 2px dashed hsl(var(--primary-hue), 100%, 80%);
+}
+
+#timeline .timestamp:first-child .pseudo-line::before {
+  height: 50%;
+  top: calc(50% + 0.5em);
+}
+#timeline .timestamp:last-child .pseudo-line::before {
+  height: calc(1em + 50%);
+  top: -0.5em;
+}
+#timeline .timestamp:last-child .pseudo-line::after {
+  display: none;
+}
+
+/* preventing fade-on-scroll on lines and circles */
+#timeline .timestamp .pseudo-line,
+#timeline .timestamp::after {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+@media (min-width: 500px) {
+  #timeline .timestamp-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

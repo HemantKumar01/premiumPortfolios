@@ -1,0 +1,11 @@
+.fade-on-scroll {
+  opacity: 0;
+  transition: 1s;
+}
+.fade-on-scroll-show {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.wipe-on-scroll {
+}
