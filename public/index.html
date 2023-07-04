@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      :root {
+        /* Also change theme color below */
+        --primary-hue: 250;
+        /* Also change theme color below */
+        --font-clr: #ffffff;
+        --accent-clr: hsl(var(--primary-hue), 100%, 25%);
+      }
+    </style>
+    <meta name="theme-color" content="hsl(250,100%, 25%)" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oogabooga</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="textAnimation/textAnimation.css" />
+    <link rel="stylesheet" href="animateOnScroll/animateOnScroll.css" />
+    <link rel="stylesheet" href="timeline.css" />
+    <link rel="stylesheet" href="carousel.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://ka-f.fontawesome.com/" />
+
+    <script
+      src="https://kit.fontawesome.com/b35edf3a51.js"
+      crossorigin="anonymous"
+      defer=""
+    ></script>
+  </head>
+  <body>
+    <div class="modal loader flexbox">
+      <div class="spinner"></div>
+      <div class="spinnerLabel">Loading...</div>
+    </div>
+
+    <div class="hero">
+      <!-- <header>
+        <h1></h1>
+      </header> -->
+      <div class="container">
+        <div class="main">
+          <span class="text-wipe-in-parts">
+            <h2>Hi<span class="wavingHand">👋</span>, I am</h2>
+            <h1 class="fitOnScreen">Oogabooga</h1>
+            <h3>I create Cool Things</h3>
+          </span>
+        </div>
+        <div class="scroll-down"></div>
+      </div>
+    </div>
+
+    <section id="about">
+      <h1 class="title text-wipe-in-parts">About Me</h1>
+      <p
+        class="fade-on-scroll"
+        data-fromdirection="left"
+        style="transition-delay: 0.75s"
+      >
+        Lorem ipsum dolor sit amet consectetur adipisicing elitIure laboriosam
+        aut delectus facere cupiditate esse fuga est odio provident voluptatem
+        ad, voluptas repudiandae, quod eaque Dolor nulla nemo debitis beatae
+      </p>
+    </section>
+    <section id="achivements">
+      <h1 class="title text-wipe-in-parts">Achivements</h1>
+      <div class="achivement-container flexbox">
+        <div
+          class="achivement fade-on-scroll"
+          data-fromdirection="left"
+          style="transition-delay: 0.25s"
+        >
+          <i class="fa-solid fa-award"></i>
+          <div class="description">Winner of Lorem ipsum dolor sit amet</div>
+        </div>
+        <div
+          class="achivement fade-on-scroll"
+          data-fromdirection="left"
+          style="transition-delay: 0.25s"
+        >
+          <i class="fa-solid fa-award"></i>
+          <div class="description">
+            Got 99% in Lorem ipsum dolor sit amet consectetur adipisicing
+          </div>
+        </div>
+        <div
+          class="achivement fade-on-scroll"
+          data-fromdirection="left"
+          style="transition-delay: 0.25s"
+        >
+          <i class="fa-solid fa-award"></i>
+          <div class="description">Rank 111 in Lorem ipsum dolor sit amet</div>
+        </div>
+        <div
+          class="achivement fade-on-scroll"
+          data-fromdirection="left"
+          style="transition-delay: 0.25s"
+        >
+          <i class="fa-solid fa-award"></i>
+          <div class="description">
+            Got 25K users in Lorem ipsum dolor sit amet.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline">
+      <h1 class="title text-wipe-in-parts">Timeline</h1>
+      <div class="timestamp-container flexbox">
+        <div class="timestamp">
+          <span class="pseudo-line"></span>
+          <div class="time">June, 2023</div>
+          <div class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit Nam
+            perspiciatis
+          </div>
+        </div>
+        <div class="timestamp">
+          <span class="pseudo-line"></span>
+          <div class="time">January, 2023</div>
+          <div class="description">
+            Lorem amet consectetur adipisicing elit Nam perspiciatis
+          </div>
+        </div>
+        <div class="timestamp">
+          <span class="pseudo-line"></span>
+          <div class="time">December, 2023</div>
+          <div class="description">
+            consectetur adipisicing elit Nam perspiciatis
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="social" class="flexbox">
+      <div class="contactMe text-wipe-in-parts">Contact Me</div>
+      <div
+        class="icon flexbox"
+        id="icon-twitter"
+        style="transform: translateY(-15px)"
+      >
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+      </div>
+
+      <div
+        class="icon flexbox"
+        id="icon-instagram"
+        style="transform: translateY(-5px)"
+      >
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+      </div>
+
+      <div
+        class="icon flexbox"
+        id="icon-facebook"
+        style="transform: translateY(5px)"
+      >
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </div>
+
+      <div
+        class="icon flexbox"
+        id="icon-linkedin"
+        style="transform: translateY(15px)"
+      >
+        <i class="fa fa-linkedin" aria-hidden="true"></i>
+      </div>
+    </section>
+    <section id="gallery">
+      <div class="container">
+        <div class="carousel">
+          <img
+            src="media/galleryImage/1.jpg"
+            height="100%"
+            alt="gallery image"
+          />
+          <img
+            src="media/galleryImage/2.jpg"
+            height="100%"
+            alt="gallery image"
+          />
+          <img
+            src="media/galleryImage/3.jpg"
+            height="100%"
+            alt="gallery image"
+          />
+          <img
+            src="media/galleryImage/4.jpg"
+            height="100%"
+            alt="gallery image"
+          />
+          <img
+            src="media/galleryImage/5.jpg"
+            height="100%"
+            alt="gallery image"
+          />
+          <img
+            src="media/galleryImage/6.jpg"
+            height="100%"
+            alt="gallery image"
+          />
+          <img
+            src="media/galleryImage/7.jpg"
+            height="100%"
+            alt="gallery image"
+          />
+          <img
+            src="media/galleryImage/8.jpg"
+            height="100%"
+            alt="gallery image"
+          />
+          <img
+            src="media/galleryImage/9.jpg"
+            height="100%"
+            alt="gallery image"
+          />
+          <img
+            src="media/galleryImage/10.jpg"
+            height="100%"
+            alt="gallery image"
+          />
+          <img
+            src="media/galleryImage/11.jpg"
+            height="100%"
+            alt="gallery image"
+          />
+          <img
+            src="media/galleryImage/12.jpeg"
+            height="100%"
+            alt="gallery image"
+          />
+          <img
+            src="media/galleryImage/13.jpg"
+            height="100%"
+            alt="gallery image"
+          />
+        </div>
+      </div>
+      <a id="viewAll" href="#">Gallery&rarr;</a>
+    </section>
+    <footer>Made With ♥ By Oogabooga</footer>
+
+    <section id="userInteraction" class="flexbox">
+      <button class="editButton"><i class="fas fa-edit"></i></button>
+      <button class="editButton"><i class="fas fa-share-alt"></i></button>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script src="textAnimation/textAnimation.js"></script>
+    <script src="sizeHandler.js"></script>
+    <script src="animateOnScroll/animateOnScroll.js"></script>
+    <script src="script.js"></script>
+    <script>
+      window.onload = async () => {
+        await resizeToFitContent();
+        console.log("Size Handling Completed");
+
+        document.querySelector(".loader").style.display = "none";
+        textWipeInParts();
+        animateOnScroll();
+        document.querySelector(".scroll-down").style.opacity = "1";
+        /** TODO:
+         * Load some images initially, then lazy load rest of images and call tns again (instead of default lazyload paramenter inside tns)
+         * Optimize images on server side
+         * What if User uploaded only 1 or 2 photos
+         */
+        var carousel = tns({
+          container: ".carousel",
+          items: 2,
+          viewportMax: 90,
+          center: true,
+          autoplay: true,
+          autoplayTimeout: 1000,
+          autoplayButtonOutput: false,
+          controlsPosition: "bottom",
+          navPosition: "bottom",
+          arrowKeys: true,
+          mouseDrag: true,
+          autoWidth: true,
+          gutter: 10,
+          controlsText: ["", ""],
+        });
+      };
+      window.onresize = () => {
+        resizeToFitContent();
+      };
+    </script>
+  </body>
+</html>

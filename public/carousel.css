@@ -1,0 +1,59 @@
+.tns-controls button {
+  padding: initial;
+  position: absolute;
+  top: 50%;
+  border: none;
+  outline: none;
+}
+.tns-controls button::after {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f04b";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 110;
+
+  padding: 10px;
+  color: white;
+  background-color: black;
+  opacity: 0.9;
+  font-size: 1.5em;
+}
+.tns-controls button:nth-child(1) {
+  left: 1.7ch;
+}
+.tns-controls button:nth-child(1)::after {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+.tns-controls button:nth-child(2) {
+  right: 1.7ch;
+}
+.tns-controls button:nth-child(2)::after {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+.tns-nav {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.tns-nav button {
+  padding: initial;
+  margin: 3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.5;
+  outline: none;
+  background-color: white;
+  border: none;
+}
+.tns-nav-active {
+  opacity: 1 !important;
+  background-color: white;
+  outline: none;
+  border: none;
+}
