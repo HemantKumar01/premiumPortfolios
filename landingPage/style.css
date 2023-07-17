@@ -78,13 +78,18 @@ h4 {
   padding-right: calc(20px + 2ch);
   outline: none;
   border: none;
-  border-radius: 10px;
+  border-radius: 500px;
   background-color: #00ffaa;
   color: #351346;
   font-size: 1.2em;
   font-weight: 900;
   margin-top: 30px;
   box-shadow: 0 0 50px #00ddaa;
+  transition: 0.5s;
+}
+.hero button#main:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 50px #00dda9b4, 0 0 30px rgb(76, 0, 255);
 }
 .hero button#main svg {
   width: 2ch;
