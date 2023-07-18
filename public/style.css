@@ -155,6 +155,8 @@ section {
 }
 #about {
   text-align: center;
+  max-width: 600px;
+  margin: auto;
 }
 #social {
   background-color: hsl(var(--primary-hue), 50%, 40%);
@@ -313,10 +315,6 @@ footer {
   padding: 1em;
 }
 @media (min-width: 500px) {
-  .big-screen {
-    display: initial;
-  }
-
   section {
     padding: 3em 3em;
   }
@@ -325,6 +323,66 @@ footer {
   }
   #social .contactMe {
     transform: none;
+  }
+}
+@media (min-width: 700px) {
+  .big-screen {
+    display: initial;
+  }
+
+  .hero .main {
+    left: 30px;
+    transform: translate(0, -80%);
+    text-align: left !important;
+    z-index: 100;
+  }
+
+  .hero {
+    background: linear-gradient(
+      90deg,
+      hsl(calc(var(--primary-hue) + 20), 90%, 70%) 50%,
+      hsl(var(--primary-hue), 100%, 69%) 50% 100%
+    );
+  }
+  .hero .illustration {
+    position: absolute;
+    top: 50%;
+    right: 5vw;
+    transform: translate(0, -50%);
+  }
+  .hero .illustration .square {
+    opacity: 0.5;
+    aspect-ratio: 1 / 1;
+    width: 20vw;
+    height: 20vw;
+    background-color: hsl(calc(var(--primary-hue)), 100%, 20%);
+  }
+  .hero .illustration .square:nth-child(1) {
+    margin-left: 20vw;
+    background-color: hsl(calc(var(--primary-hue) + 10), 80%, 50%);
+  }
+  .hero .illustration img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 35vw;
+    height: auto;
+    filter: drop-shadow(5px 5px 5px black);
+  }
+
+  .main h3 {
+    font-weight: 300;
+    line-height: 1em;
+    font-size: 2vw;
+  }
+  .main h2 {
+    font-weight: 300;
+    font-size: 2vw;
+  }
+  .main h1 {
+    font-weight: 900;
+    font-size: 7vw;
   }
 }
 @keyframes waveHand {
