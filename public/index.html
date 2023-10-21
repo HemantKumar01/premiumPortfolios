@@ -184,79 +184,8 @@
         <i class="fa fa-linkedin" aria-hidden="true"></i>
       </div>
     </section>
-    <!-- <section id="gallery">
-      <div class="container">
-        <div class="carousel">
-          <img
-            src="media/galleryImage/1.jpg"
-            height="100%"
-            alt="gallery image"
-          />
-          <img
-            src="media/galleryImage/2.jpg"
-            height="100%"
-            alt="gallery image"
-          />
-          <img
-            src="media/galleryImage/3.jpg"
-            height="100%"
-            alt="gallery image"
-          />
-          <img
-            src="media/galleryImage/4.jpg"
-            height="100%"
-            alt="gallery image"
-          />
-          <img
-            src="media/galleryImage/5.jpg"
-            height="100%"
-            alt="gallery image"
-          />
-          <img
-            src="media/galleryImage/6.jpg"
-            height="100%"
-            alt="gallery image"
-          />
-          <img
-            src="media/galleryImage/7.jpg"
-            height="100%"
-            alt="gallery image"
-          />
-          <img
-            src="media/galleryImage/8.jpg"
-            height="100%"
-            alt="gallery image"
-          />
-          <img
-            src="media/galleryImage/9.jpg"
-            height="100%"
-            alt="gallery image"
-          />
-          <img
-            src="media/galleryImage/10.jpg"
-            height="100%"
-            alt="gallery image"
-          />
-          <img
-            src="media/galleryImage/11.jpg"
-            height="100%"
-            alt="gallery image"
-          />
-          <img
-            src="media/galleryImage/12.jpeg"
-            height="100%"
-            alt="gallery image"
-          />
-          <img
-            src="media/galleryImage/13.jpg"
-            height="100%"
-            alt="gallery image"
-          />
-        </div>
-      </div>
-      <a id="viewAll" href="#">Gallery&rarr;</a>
-    </section> -->
-    <footer>Made With ♥ For Oogabooga</footer>
+
+    <footer>Made With ♥ For You</footer>
 
     <section id="userInteraction" class="flexbox">
       <button class="editButton"><i class="fas fa-edit"></i></button>
@@ -267,7 +196,7 @@
     <script>
       var socket = io();
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+
     <script src="textAnimation/textAnimation.js"></script>
     <script src="sizeHandler.js"></script>
     <script src="animateOnScroll/animateOnScroll.js"></script>
@@ -281,27 +210,6 @@
         textWipeInParts();
         animateOnScroll();
         document.querySelector(".scroll-down").style.opacity = "1";
-        /** TODO:
-         * Load some images initially, then lazy load rest of images and call tns again (instead of default lazyload paramenter inside tns)
-         * Optimize images on server side
-         * What if User uploaded only 1 or 2 photos
-         */
-        var carousel = tns({
-          container: ".carousel",
-          items: 2,
-          viewportMax: 90,
-          center: true,
-          autoplay: true,
-          autoplayTimeout: 1000,
-          autoplayButtonOutput: false,
-          controlsPosition: "bottom",
-          navPosition: "bottom",
-          arrowKeys: true,
-          mouseDrag: true,
-          autoWidth: true,
-          gutter: 10,
-          controlsText: ["", ""],
-        });
       };
       window.onresize = () => {
         resizeToFitContent();
