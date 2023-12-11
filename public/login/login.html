@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="theme-color" content="#ff7627" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Login</title>
+    <!-- <link rel="stylesheet" href="/tailwind-style.css" /> -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="/login/login.css" />
+  </head>
+  <body>
+    <header class="flexbox">
+      <a href="/" id="home-link"
+        ><i class="fa-solid fa-house" aria-hidden="true"></i
+      ></a>
+      <h1></h1>
+    </header>
+
+    <form method="POST" id="login" class="flexbox">
+      <div class="verification flexbox">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h2>Email Verification Link Sent</h2>
+        <h3>Please check your email.</h3>
+        <p>Login Again After Verifying Your Email</p>
+
+        <a href="/login" class="login-flow">Login</a>
+      </div>
+
+      <div class="container flexbox">
+        <h1>Login</h1>
+
+        <div class="input-container">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required />
+        </div>
+        <div class="input-container">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" required />
+        </div>
+        <div class="forgot-password-link-container">
+          <a href="#" id="forgot-password-link">Forgot Password?</a>
+        </div>
+
+        <input type="submit" value="Login" />
+
+        <hr class="or" />
+        <a href="/register" class="login-flow">Register</a>
+      </div>
+      <div class="loader" style="display: none">
+        <div class="spinner"></div>
+      </div>
+    </form>
+
+    <script src="/firebase.js"></script>
+    <script>
+      firebase.isSignedIn().then((signedIn) => {
+        if (signedIn) {
+          window.location.href = "/";
+        }
+      });
+    </script>
+    <script src="/login/login.js"></script>
+  </body>
+</html>

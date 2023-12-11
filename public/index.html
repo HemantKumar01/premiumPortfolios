@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <style>
-      :root {
-        /* Also change theme color below */
-        --primary-hue: 250;
-        /* Also change theme color below */
-        --font-clr: #ffffff;
-        --accent-clr: hsl(var(--primary-hue), 100%, 25%);
-      }
-    </style>
     <meta name="theme-color" content="hsl(250,100%, 25%)" />
 
     <meta charset="UTF-8" />
@@ -21,10 +12,6 @@
     <link rel="stylesheet" href="animateOnScroll/animateOnScroll.css" />
     <link rel="stylesheet" href="timeline.css" />
     <link rel="stylesheet" href="carousel.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
-    />
 
     <link
       rel="stylesheet"
@@ -43,11 +30,21 @@
       <div class="spinner"></div>
       <div class="spinnerLabel">Loading...</div>
     </div>
+    <i class="fa-solid fa-bars menu-bar"></i>
 
+    <header>
+      <nav class="flexbox">
+        <i class="fa-solid fa-xmark menu-bar"></i>
+
+        <a href="#about">About Me</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#social">Contact</a>
+        <a href="#blog">Blog</a>
+        <a class="button" href="#settings"><i class="fa-solid fa-cog"></i></a>
+      </nav>
+    </header>
     <div class="hero">
-      <!-- <header>
-        <h1></h1>
-      </header> -->
       <div class="container">
         <div class="main">
           <span class="text-wipe-in-parts">
@@ -70,18 +67,26 @@
 
     <section id="about">
       <h1 class="title text-wipe-in-parts">About Me</h1>
-      <p
-        class="fade-on-scroll"
-        data-fromdirection="left"
-        style="transition-delay: 0.75s"
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing elitIure laboriosam
-        aut delectus facere cupiditate esse fuga est odio provident voluptatem
-        ad, voluptas repudiandae, quod eaque Dolor nulla nemo debitis beatae
-      </p>
+      <div class="flexbox">
+        <img
+          src="media/tmp.jpg"
+          alt="profile-photo"
+          class="profile-photo fade-on-scroll"
+          style="transition-delay: 0.5s"
+        />
+        <p
+          class="fade-on-scroll"
+          data-fromdirection="left"
+          style="transition-delay: 0.75s"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elitIure laboriosam
+          aut delectus facere cupiditate esse fuga est odio provident voluptatem
+          ad, voluptas repudiandae, quod eaque Dolor nulla nemo debitis beatae
+        </p>
+      </div>
     </section>
-    <section id="achivements">
-      <h1 class="title text-wipe-in-parts">Achivements</h1>
+    <section id="achievements">
+      <h1 class="title text-wipe-in-parts">Achievements</h1>
       <div class="achivement-container flexbox">
         <div
           class="achivement fade-on-scroll"
@@ -187,28 +192,83 @@
     </section>
     <section id="blog">
       <h1 class="title text-wipe-in-parts">Blog</h1>
+      <div class="flexbox card-container">
+        <div class="card fade-on-scroll" data-fromdirection="bottom">
+          <h1>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti,
+            facilis.
+          </h1>
+          <div class="timestamp">Fri Dec 08 2023 12:29:56</div>
+        </div>
+        <div class="card fade-on-scroll" data-fromdirection="bottom">
+          <h1>Creating AI blah blah blah! and making it incredible.</h1>
+          <div class="timestamp">Fri Dec 08 2023 12:29:56</div>
+        </div>
+      </div>
     </section>
 
-    <footer>Made With ♥ For You</footer>
+    <footer>Made With ❤️ For You</footer>
 
-    <section id="userInteraction" class="flexbox">
-      <button class="editButton"><i class="fas fa-edit"></i></button>
-      <button class="editButton"><i class="fas fa-share-alt"></i></button>
+    <section class="flexbox userInteraction" id="settings">
+      <button class="shareButton"><i class="fas fa-share-alt"></i></button>
+
+      <button class="editButton">
+        <i class="fas fa-pencil" aria-hidden="true"></i>
+      </button>
+      <button class="signOutButton"><i class="fas fa-sign-out"></i></button>
     </section>
 
-    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="/firebase.js"></script>
     <script>
-      var socket = io();
+      firebase.isSignedIn().then((signedIn) => {
+        if (!signedIn) {
+          window.location.href = "/landingPage";
+        }
+      });
     </script>
 
     <script src="textAnimation/textAnimation.js"></script>
     <script src="sizeHandler.js"></script>
     <script src="animateOnScroll/animateOnScroll.js"></script>
-    <script src="script.js"></script>
+    <script src="textColor.js"></script>
+
     <script>
+      document.querySelector(".signOutButton").onclick = () => {
+        firebase.signOutUser().then(() => {
+          window.location.href = "/landingPage";
+        });
+      };
+      document
+        .querySelector("meta[name=theme-color]")
+        .setAttribute(
+          "content",
+          `hsl(${getComputedStyle(document.documentElement).getPropertyValue(
+            "--primary-hue"
+          )}, 100%, 25%)`
+        );
       window.onload = async () => {
         await resizeToFitContent();
         console.log("Size Handling Completed");
+        document
+          .querySelector(".menu-bar.fa-bars")
+          .addEventListener("click", () => {
+            document.querySelector("header").style.left = "0%";
+          });
+        document
+          .querySelector(".menu-bar.fa-xmark")
+          .addEventListener("click", () => {
+            document.querySelector("header").style.left = "100%";
+          });
+        if (
+          getComputedStyle(document.querySelector(".menu-bar")).display !=
+          "none"
+        ) {
+          document.querySelectorAll("header nav a").forEach((element) => {
+            element.addEventListener("click", () => {
+              document.querySelector("header").style.left = "100%";
+            });
+          });
+        }
 
         document.querySelector(".loader").style.display = "none";
         textWipeInParts();

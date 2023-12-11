@@ -31,5 +31,17 @@
         id="heroImg"
       />
     </div>
+    <script src="/firebase.js"></script>
+    <script>
+      document.querySelector("button#main").onclick = () => {
+        firebase.isSignedIn().then((signedIn) => {
+          if (signedIn) {
+            window.location.href = "/";
+          } else {
+            window.location.href = "/login";
+          }
+        });
+      };
+    </script>
   </body>
 </html>

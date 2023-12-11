@@ -1,25 +1,25 @@
 {
-  "name": "premiumportfolios",
+  "name": "attendancemark",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "builddev": "webpack --mode=development",
+    "build": "webpack --mode=production",
+    "serve": "nodemon index.js",
+    "test": "npm-run-all --parallel builddev serve"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/HemantKumar01/premiumPortfolios.git"
-  },
-  "author": "Hemant Kumar",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/HemantKumar01/premiumPortfolios/issues"
-  },
-  "homepage": "https://github.com/HemantKumar01/premiumPortfolios#readme",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "chalk": "^4.1.2",
     "express": "^4.18.2",
-    "pug": "^3.0.2",
-    "socket.io": "^4.7.1"
+    "firebase": "^10.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "npm-run-all": "^4.1.5",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   }
 }

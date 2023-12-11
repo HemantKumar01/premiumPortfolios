@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Website</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="text-3xl text-white-700 leading-tight text-center mt-5 mb-12">
+        Edit Your Website Details
+      </h1>
+    </header>
+    <form
+      id="signUpForm"
+      class="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8 mt-12"
+      action="#!"
+    >
+      <!-- start step indicators -->
+      <div class="form-header flex gap-3 mb-4 text-xs text-center">
+        <span class="stepIndicator flex-1 pb-8 relative">About</span>
+        <span class="stepIndicator flex-1 pb-8 relative">Achievements</span>
+        <span class="stepIndicator flex-1 pb-8 relative">Timeline</span>
+        <span class="stepIndicator flex-1 pb-8 relative">Social</span>
+      </div>
+      <!-- end step indicators -->
+
+      <!-- step one -->
+      <div class="step">
+        <p class="text-md text-gray-700 leading-tight text-center mt-8 mb-5">
+          Your Description
+        </p>
+        <div class="mb-6">
+          <input
+            type="text"
+            placeholder="Your Name"
+            name="name"
+            class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200"
+            oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200'"
+          />
+        </div>
+        <div class="mb-6">
+          <input
+            type="text"
+            placeholder="Tagline (eg. I Create Cool Things)"
+            name="tagline"
+            class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200"
+            oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200'"
+          />
+        </div>
+        <div class="mb-6">
+          <textarea
+            placeholder="About You (max 500 words)"
+            name="about"
+            class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200"
+            oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-red-200'"
+            maxlength="500"
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- step two -->
+      <div class="step">
+        <p class="text-md text-gray-700 leading-tight text-center mt-8 mb-5">
+          Describe Your Achievements
+        </p>
+        <div class="mb-6">
+          <textarea
+            rows="10"
+            placeholder="Each Line will be one achievements"
+            name="achievements"
+            class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200"
+            oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200'"
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- step three -->
+      <div class="step">
+        <p class="text-md text-gray-700 leading-tight text-center mt-8 mb-5">
+          Describe a Timeline of Important Events of your Life
+        </p>
+        <div class="mb-6">
+          <select
+            name="month"
+            class="px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-grayd-200"
+          >
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+          </select>
+          <input
+            type="number"
+            min="1900"
+            value="2023"
+            class="px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-grayd-200"
+          />
+          <input
+            type="text"
+            placeholder="Description Of Event"
+            name="fullname"
+            class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-grayd-200"
+            oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200'"
+          />
+        </div>
+      </div>
+      <!-- step four -->
+      <div class="step">
+        <p class="text-md text-gray-700 leading-tight text-center mt-8 mb-5">
+          <b>Your presence on the social network.</b> <br /><small>
+            Please provide URL links </small
+          ><br /><small>(Leave blank if you don't have.)</small>
+        </p>
+        <div class="mb-6">
+          <input
+            type="text"
+            placeholder="Instagram Link"
+            name="instagram"
+            class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200"
+            oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200'"
+          />
+        </div>
+        <div class="mb-6">
+          <input
+            type="text"
+            placeholder="LinkedIn Link"
+            name="linkedin"
+            class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200"
+            oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200'"
+          />
+        </div>
+        <div class="mb-6">
+          <input
+            type="text"
+            placeholder="Twitter Link"
+            name="twitter"
+            class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200"
+            oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200'"
+          />
+        </div>
+        <div class="mb-6">
+          <input
+            type="text"
+            placeholder="Facebook Link"
+            name="facebook"
+            class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200"
+            oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200'"
+          />
+        </div>
+      </div>
+
+      <!-- start previous / next buttons -->
+      <div class="form-footer flex gap-3">
+        <button
+          type="button"
+          id="prevBtn"
+          class="flex-1 focus:outline-none border border-gray-300 py-2 px-5 rounded-lg shadow-sm text-center text-gray-700 bg-white hover:bg-gray-100 text-lg"
+          onclick="nextPrev(-1)"
+        >
+          Previous
+        </button>
+        <button
+          type="button"
+          id="nextBtn"
+          class="flex-1 border border-transparent focus:outline-none p-3 rounded-md text-center text-white bg-indigo-600 hover:bg-indigo-700 text-lg"
+          onclick="nextPrev(1)"
+        >
+          Next
+        </button>
+      </div>
+      <!-- end previous / next buttons -->
+    </form>
+
+    <!-- tailwind css -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+    />
+    <script src="script.js"></script>
+  </body>
+</html>

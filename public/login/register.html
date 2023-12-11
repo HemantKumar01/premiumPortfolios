@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="theme-color" content="#ff7627" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Register</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="/login/login.css" />
+  </head>
+  <body>
+    <header class="flexbox">
+      <a href="/" id="home-link"
+        ><i class="fa-solid fa-house" aria-hidden="true"></i
+      ></a>
+      <h1></h1>
+    </header>
+
+    <form method="POST" id="register" class="flexbox">
+      <div class="successful flexbox">
+        <i class="fas fa-check-circle"></i>
+        <h2>Registration Successful</h2>
+        <p>please login to continue.</p>
+        <a href="/login" class="login-flow">Login</a>
+      </div>
+      <div class="container flexbox">
+        <h1>Register</h1>
+        <div class="input-container">
+          <label for="email">Email </label>
+          <input type="email" name="email" id="email" required />
+        </div>
+        <div class="input-container">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" required />
+        </div>
+        <div class="input-container">
+          <label for="cnfpassword">Confirm Password</label>
+          <input type="password" name="cnfpassword" id="cnfpassword" required />
+          <p id="password-matching"></p>
+        </div>
+        <input type="submit" value="Register" />
+        <hr class="or" />
+        <a href="/login" class="login-flow">Login</a>
+      </div>
+
+      <!-- spinner for loading state -->
+      <div class="loader" style="display: none">
+        <div class="spinner"></div>
+      </div>
+      <!-- below to be shown once verification email is sent successfully -->
+      <div class="success" style="display: none">
+        <div class="illustration">
+          <!-- adding an animated free illustration -->
+          <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+          <lord-icon
+            src="https://cdn.lordicon.com/iepbfivp.json"
+            trigger="loop"
+            delay="500"
+            colors="primary:#ffffff,secondary:#00ffbf,tertiary:#ebe6ef"
+            style="width: 250px; height: 250px"
+          >
+          </lord-icon>
+        </div>
+        <div class="text">
+          Email Verification Link Sent Successfully. Please Check Your Email.
+        </div>
+      </div>
+    </form>
+
+    <script src="/firebase.js"></script>
+    <script src="/login/register.js"></script>
+  </body>
+</html>
