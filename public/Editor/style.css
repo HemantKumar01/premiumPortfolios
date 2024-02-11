@@ -28,6 +28,54 @@ body {
   flex-wrap: wrap;
   gap: 15px;
 }
+button.btn {
+  background-color: #5a67d8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+button.btn.secondary {
+  background-color: transparent;
+  border: 2px solid #5a67d8;
+  color: #5a67d8;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  place-content: center;
+}
+.modal .card {
+  max-width: 90vw;
+  padding: 3em;
+  background: white;
+  border-radius: 10px;
+}
+.event-form,
+.achievement-form {
+  justify-content: flex-start;
+}
+table.timeline,
+table.achievements {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1em;
+}
+table.timeline tr td,
+table.achievements tr td {
+  padding: 0.5em;
+  border: 1px solid #5a67d8;
+}
 header {
   width: 100%;
   height: 60px;
@@ -100,4 +148,16 @@ body {
 }
 #signUpForm .step {
   display: none;
+}
+.event,
+.achievement {
+  padding: 1em;
+  border-radius: 10px;
+  background: rgba(128, 128, 128, 0.06);
+}
+.event .year {
+  max-width: 15ch;
+}
+.event .desc {
+  max-width: calc(10px + 35ch);
 }

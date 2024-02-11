@@ -4,6 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edit Website</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://ka-f.fontawesome.com/" />
+
+    <script
+      src="https://kit.fontawesome.com/b35edf3a51.js"
+      crossorigin="anonymous"
+      defer=""
+    ></script>
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -23,6 +35,7 @@
         <span class="stepIndicator flex-1 pb-8 relative">Achievements</span>
         <span class="stepIndicator flex-1 pb-8 relative">Timeline</span>
         <span class="stepIndicator flex-1 pb-8 relative">Social</span>
+        <span class="stepIndicator flex-1 pb-8 relative">Pic</span>
       </div>
       <!-- end step indicators -->
 
@@ -54,7 +67,7 @@
             placeholder="About You (max 500 words)"
             name="about"
             class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200"
-            oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-red-200'"
+            oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200'"
             maxlength="500"
           ></textarea>
         </div>
@@ -65,14 +78,12 @@
         <p class="text-md text-gray-700 leading-tight text-center mt-8 mb-5">
           Describe Your Achievements
         </p>
-        <div class="mb-6">
-          <textarea
-            rows="10"
-            placeholder="Each Line will be one achievements"
-            name="achievements"
-            class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200"
-            oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200'"
-          ></textarea>
+        <div class="flexbox events-list"></div>
+        <div class="mb-6 w-full content-center flexbox">
+          <table class="achievements"></table>
+          <button class="btn addData" id="newAchievement">
+            + Add Achievement
+          </button>
         </div>
       </div>
 
@@ -81,37 +92,11 @@
         <p class="text-md text-gray-700 leading-tight text-center mt-8 mb-5">
           Describe a Timeline of Important Events of your Life
         </p>
-        <div class="mb-6">
-          <select
-            name="month"
-            class="px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-grayd-200"
-          >
-            <option value="1">January</option>
-            <option value="2">February</option>
-            <option value="3">March</option>
-            <option value="4">April</option>
-            <option value="5">May</option>
-            <option value="6">June</option>
-            <option value="7">July</option>
-            <option value="8">August</option>
-            <option value="9">September</option>
-            <option value="10">October</option>
-            <option value="11">November</option>
-            <option value="12">December</option>
-          </select>
-          <input
-            type="number"
-            min="1900"
-            value="2023"
-            class="px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-grayd-200"
-          />
-          <input
-            type="text"
-            placeholder="Description Of Event"
-            name="fullname"
-            class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-grayd-200"
-            oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200'"
-          />
+
+        <div class="flexbox events-list"></div>
+        <div class="mb-6 w-full content-center flexbox">
+          <table class="timeline"></table>
+          <button class="btn addData" id="newEvent">+ Add Event</button>
         </div>
       </div>
       <!-- step four -->
@@ -126,7 +111,7 @@
             type="text"
             placeholder="Instagram Link"
             name="instagram"
-            class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200"
+            class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200 optional"
             oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200'"
           />
         </div>
@@ -135,7 +120,16 @@
             type="text"
             placeholder="LinkedIn Link"
             name="linkedin"
-            class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200"
+            class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200 optional"
+            oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200'"
+          />
+        </div>
+        <div class="mb-6">
+          <input
+            type="text"
+            placeholder="Github Link"
+            name="github"
+            class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200 optional"
             oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200'"
           />
         </div>
@@ -144,7 +138,7 @@
             type="text"
             placeholder="Twitter Link"
             name="twitter"
-            class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200"
+            class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200 optional"
             oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200'"
           />
         </div>
@@ -153,12 +147,28 @@
             type="text"
             placeholder="Facebook Link"
             name="facebook"
-            class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200"
+            class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200 optional"
             oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200'"
           />
         </div>
       </div>
-
+      <!-- step five -->
+      <div class="step">
+        <p class="text-md text-gray-700 leading-tight text-center mt-8 mb-5">
+          <b>Your Photo</b><br />
+          <small>How do you look?</small>
+        </p>
+        <div class="flexbox events-list"></div>
+        <div class="mb-6 w-full content-center flexbox">
+          <input
+            type="file"
+            name="photo"
+            class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200"
+            oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200'"
+            accept="image/*"
+          />
+        </div>
+      </div>
       <!-- start previous / next buttons -->
       <div class="form-footer flex gap-3">
         <button
@@ -180,7 +190,58 @@
       </div>
       <!-- end previous / next buttons -->
     </form>
+    <div class="modal events-modal">
+      <div class="mb-6 flexbox card event-form">
+        <select
+          name="month"
+          class="px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-grayd-200 month"
+          value="month"
+          aria-placeholder="Month"
+        >
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+        <input
+          type="number"
+          placeholder="Date"
+          min="1900"
+          value="2023"
+          class="px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-grayd-200 year"
+        />
+        <input
+          type="text"
+          placeholder="Description Of Event (max 300 letters)"
+          name="descEvent"
+          class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-grayd-200 desc"
+          maxlength="300"
+        />
+        <button class="btn addEvent">Add to Timeline</button>
+        <button class="btn secondary cancelModal">Cancel</button>
+      </div>
+    </div>
+    <div class="modal achievements-modal">
+      <div class="mb-6 flexbox card achievement-form">
+        <textarea
+          name="achievement"
+          class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-grayd-200 desc"
+          aria-placeholder="achievement"
+        >
+        </textarea>
 
+        <button class="btn addAchievement">Add to Achievements</button>
+        <button class="btn secondary cancelModal">Cancel</button>
+      </div>
+    </div>
     <!-- tailwind css -->
     <link
       rel="stylesheet"
